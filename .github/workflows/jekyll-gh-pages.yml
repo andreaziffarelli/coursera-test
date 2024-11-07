@@ -49,3 +49,23 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+            - nome: Cache
+  usi: azioni/cache@v4.1.2
+  con:
+    # Un elenco di file, directory e modelli jolly da memorizzare nella cache e ripristinare
+    sentiero:
+    # Una chiave esplicita per ripristinare e salvare la cache
+    chiave:
+    # Una stringa multilinea ordinata che elenca le chiavi con prefisso corrispondente, utilizzate per ripristinare la cache obsoleta se non si è verificato alcun hit nella cache per la chiave. Nota che `cache-hit` restituisce false in questo caso.
+    restore-keys: # facoltativo
+    # La dimensione del blocco utilizzata per suddividere i file di grandi dimensioni durante il caricamento, in byte
+    upload-chunk-size: # facoltativo
+    # Un valore booleano facoltativo, se abilitato, consente ai runner di Windows di salvare o ripristinare le cache che possono essere ripristinate o salvate rispettivamente su altre piattaforme
+    enableCrossOsArchive: # facoltativo, il valore predefinito è falso
+    # Fallisci il flusso di lavoro se la voce della cache non viene trovata
+    fail-on-cache-miss: # facoltativo, il valore predefinito è false
+    # Controlla se esiste una voce nella cache per gli input specificati (chiave, chiavi di ripristino) senza scaricare la cache
+    lookup-only: # facoltativo, il valore predefinito è false
+    # Esegui il passaggio di post per salvare la cache anche se un altro passaggio precedente fallisce
+    save-always: # facoltativo, il valore predefinito è false
+          
